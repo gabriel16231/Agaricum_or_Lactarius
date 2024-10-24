@@ -1,0 +1,17 @@
+function [gradx]=gradx(e,A,X,x)
+a=0.002;
+[n,N]=size(A);
+[~,m]=size(X);
+gradx=zeros(m,1);
+
+for k=1:m
+    sum=0;
+    for i=1:N
+        sum=sum+e(i)*(1/(SoftPlus_param(A(i,:),X)*x))*SoftPlus_param(A(i,:),X(:,k))+(1-e(i))*(1/(1-SoftPlus_param(A(i,:),X)*x))*SoftPlus_param(A(i,:),X(:,k));
+    end
+    grad
+end
+
+
+
+end
